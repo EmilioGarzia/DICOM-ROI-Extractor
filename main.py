@@ -17,6 +17,7 @@ parser.add_argument("-d", "--dicom", action="store_true", help="Specify that the
 args = parser.parse_args() 
 args = vars(args)
 
+# Handle possible errors about directories
 if not os.path.exists(args["output_dir"]):
     os.mkdir(args["output_dir"])
 if not os.path.exists(args["input_dir"]):
