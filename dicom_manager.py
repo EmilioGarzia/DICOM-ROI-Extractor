@@ -30,11 +30,14 @@ def extract_metadata(dicom_file):
     return metadata
 
 # Extract the ROI from ecography raw image
-def extract_roi_ecography(input_path):
-    # Read DICOM file
-    dicom_file = pydicom.dcmread(input_path)
-    img = dicom_file.pixel_array
-    img = np.uint8(img / np.max(img) * 255)
+def extract_roi_ecography(input_path, dicom=False):
+    if not dicom:
+       img = cv.imread(input_path, cv.CV_8UC3) 
+    else:
+        # Read DICOM file
+        dicom_file = pydicom.dcmread(input_path)
+        img = dicom_file.pixel_array
+        img = np.uint8(img / np.max(img) * 255)
 
     # Divide the foreground from the background
     _, threshold = cv.threshold(img, 30, 255, cv.THRESH_BINARY)
