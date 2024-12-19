@@ -17,7 +17,7 @@ This program allows you to extract a Region of Interest (ROI) from ultrasound ra
 
 ## Main Features
 
-- **ROI Extraction**: Extracts the Region of Interest (ROI) from a DICOM ultrasound image.
+- **ROI Extraction**: Extracts the Region of Interest (ROI) from a DICOM or raster ultrasound images.
 - **Save as DICOM**: Saves the extracted image as a new DICOM file with the original metadata.
 - **Visualize DICOM Images**: Visualizes DICOM images using Matplotlib.
 - **Extract DICOM Metadata**: Extracts and prints the main metadata from a DICOM file.
